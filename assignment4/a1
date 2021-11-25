@@ -1,0 +1,1383 @@
+1)creating database name assignment
+
+ use assignment
+switched to db assignment
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+* add data from the mongodb compass
+
+> db.movies.find({}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132d"),
+        "movie_name" : "Mysterious Geographic Explorations of Jasper Morello, The",
+        "movie_genre" : "Adventure|Animation",
+        "production_year" : 1994,
+        "budget" : 12671
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1332"),
+        "movie_name" : "Reap the Wild Wind",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1994,
+        "budget" : 18896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1333"),
+        "movie_name" : "August",
+        "movie_genre" : "Drama",
+        "production_year" : 2000,
+        "budget" : 12685
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1334"),
+        "movie_name" : "Killer Crocodile",
+        "movie_genre" : "Horror",
+        "production_year" : 1992,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1335"),
+        "movie_name" : "Insurgent",
+        "movie_genre" : "Action|Romance|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 13560
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1337"),
+        "movie_name" : "Bond Girls Are Forever",
+        "movie_genre" : "Documentary",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1338"),
+        "movie_name" : "Song of the Little Road (Pather Panchali)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 19083
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1339"),
+        "movie_name" : "House IV",
+        "movie_genre" : "Fantasy|Horror|Thriller",
+        "production_year" : 2010,
+        "budget" : 9149
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133a"),
+        "movie_name" : "Knight of Cups",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 13553
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133b"),
+        "movie_name" : "An Evening with Robin Williams",
+        "movie_genre" : "Comedy",
+        "production_year" : 1988,
+        "budget" : 12309
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "Fire of Conscience (For lung)",
+        "movie_genre" : "Action|Crime|Mystery|Thriller",
+        "production_year" : 1993,
+        "budget" : 12751
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133d"),
+        "movie_name" : "Sue",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+
+
+> db.movies.find({"movie_name":{$eq:"Kill Switch"}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+
+> db.movies.find({"movie_name":{$ne:"Sue"}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132d"),
+        "movie_name" : "Mysterious Geographic Explorations of Jasper Morello, The",
+        "movie_genre" : "Adventure|Animation",
+        "production_year" : 1994,
+        "budget" : 12671
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1332"),
+        "movie_name" : "Reap the Wild Wind",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1994,
+        "budget" : 18896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1333"),
+        "movie_name" : "August",
+        "movie_genre" : "Drama",
+        "production_year" : 2000,
+        "budget" : 12685
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1334"),
+        "movie_name" : "Killer Crocodile",
+        "movie_genre" : "Horror",
+        "production_year" : 1992,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1335"),
+        "movie_name" : "Insurgent",
+        "movie_genre" : "Action|Romance|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 13560
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1337"),
+        "movie_name" : "Bond Girls Are Forever",
+        "movie_genre" : "Documentary",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1338"),
+        "movie_name" : "Song of the Little Road (Pather Panchali)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 19083
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1339"),
+        "movie_name" : "House IV",
+        "movie_genre" : "Fantasy|Horror|Thriller",
+        "production_year" : 2010,
+        "budget" : 9149
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133a"),
+        "movie_name" : "Knight of Cups",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 13553
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133b"),
+        "movie_name" : "An Evening with Robin Williams",
+        "movie_genre" : "Comedy",
+        "production_year" : 1988,
+        "budget" : 12309
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "Fire of Conscience (For lung)",
+        "movie_genre" : "Action|Crime|Mystery|Thriller",
+        "production_year" : 1993,
+        "budget" : 12751
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133f"),
+        "movie_name" : "Mother's Day",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2010,
+        "budget" : 18844
+}
+
+> db.movies.find({"budget":{$gt:10000}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132d"),
+        "movie_name" : "Mysterious Geographic Explorations of Jasper Morello, The",
+        "movie_genre" : "Adventure|Animation",
+        "production_year" : 1994,
+        "budget" : 12671
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1332"),
+        "movie_name" : "Reap the Wild Wind",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1994,
+        "budget" : 18896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1333"),
+        "movie_name" : "August",
+        "movie_genre" : "Drama",
+        "production_year" : 2000,
+        "budget" : 12685
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1334"),
+        "movie_name" : "Killer Crocodile",
+        "movie_genre" : "Horror",
+        "production_year" : 1992,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1335"),
+        "movie_name" : "Insurgent",
+        "movie_genre" : "Action|Romance|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 13560
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1338"),
+        "movie_name" : "Song of the Little Road (Pather Panchali)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 19083
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133a"),
+        "movie_name" : "Knight of Cups",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 13553
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133b"),
+        "movie_name" : "An Evening with Robin Williams",
+        "movie_genre" : "Comedy",
+        "production_year" : 1988,
+        "budget" : 12309
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "Fire of Conscience (For lung)",
+        "movie_genre" : "Action|Crime|Mystery|Thriller",
+        "production_year" : 1993,
+        "budget" : 12751
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133d"),
+        "movie_name" : "Sue",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133f"),
+        "movie_name" : "Mother's Day",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2010,
+        "budget" : 18844
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1340"),
+        "movie_name" : "Threesome",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 11702
+}
+Type "it" for more
+>
+> db.movies.find({"budget":{$gte:10000}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132d"),
+        "movie_name" : "Mysterious Geographic Explorations of Jasper Morello, The",
+        "movie_genre" : "Adventure|Animation",
+        "production_year" : 1994,
+        "budget" : 12671
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1332"),
+        "movie_name" : "Reap the Wild Wind",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1994,
+        "budget" : 18896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1333"),
+        "movie_name" : "August",
+        "movie_genre" : "Drama",
+        "production_year" : 2000,
+        "budget" : 12685
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1334"),
+        "movie_name" : "Killer Crocodile",
+        "movie_genre" : "Horror",
+        "production_year" : 1992,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1335"),
+        "movie_name" : "Insurgent",
+        "movie_genre" : "Action|Romance|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 13560
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1338"),
+        "movie_name" : "Song of the Little Road (Pather Panchali)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 19083
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133a"),
+        "movie_name" : "Knight of Cups",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 13553
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133b"),
+        "movie_name" : "An Evening with Robin Williams",
+        "movie_genre" : "Comedy",
+        "production_year" : 1988,
+        "budget" : 12309
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "Fire of Conscience (For lung)",
+        "movie_genre" : "Action|Crime|Mystery|Thriller",
+        "production_year" : 1993,
+        "budget" : 12751
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133d"),
+        "movie_name" : "Sue",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133f"),
+        "movie_name" : "Mother's Day",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2010,
+        "budget" : 18844
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1340"),
+        "movie_name" : "Threesome",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1997,
+        "budget" : 11702
+}
+
+> db.movies.find({"budget":{$lt:9100}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13d1"),
+        "movie_name" : "Ringer, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2002,
+        "budget" : 9019
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d146d"),
+        "movie_name" : "Nowhere to Run",
+        "movie_genre" : "Action|Romance",
+        "production_year" : 2008,
+        "budget" : 9052
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1474"),
+        "movie_name" : "The Hire: Ambush",
+        "movie_genre" : "Action",
+        "production_year" : 1998,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14cc"),
+        "movie_name" : "Castle of Purity (El castillo de la pureza)",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 9082
+}
+>
+> db.movies.find({"budget":{$lte:9100}}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13d1"),
+        "movie_name" : "Ringer, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2002,
+        "budget" : 9019
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d146d"),
+        "movie_name" : "Nowhere to Run",
+        "movie_genre" : "Action|Romance",
+        "production_year" : 2008,
+        "budget" : 9052
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1474"),
+        "movie_name" : "The Hire: Ambush",
+        "movie_genre" : "Action",
+        "production_year" : 1998,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14cc"),
+        "movie_name" : "Castle of Purity (El castillo de la pureza)",
+        "movie_genre" : "Drama",
+        "production_year" : 2007,
+        "budget" : 9082
+}
+>
+
+
+> db.movies.find({$and : [{"production_year" :{$gt:2005}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133f"),
+        "movie_name" : "Mother's Day",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2010,
+        "budget" : 18844
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1341"),
+        "movie_name" : "Whole Wide World, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2012,
+        "budget" : 19579
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1342"),
+        "movie_name" : "Ultimate Gift, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d134b"),
+        "movie_name" : "The Oscar",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 11896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d134d"),
+        "movie_name" : "Fuga de cerebros",
+        "movie_genre" : "Comedy",
+        "production_year" : 2011,
+        "budget" : 17731
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1351"),
+        "movie_name" : "Be Kind Rewind",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 17234
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1355"),
+        "movie_name" : "Catch Me If You Can",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2009,
+        "budget" : 17372
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1357"),
+        "movie_name" : "Selena",
+        "movie_genre" : "Drama|Musical",
+        "production_year" : 2007,
+        "budget" : 19866
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1360"),
+        "movie_name" : "Tremors II: Aftershocks",
+        "movie_genre" : "Comedy|Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 12264
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1367"),
+        "movie_name" : "Fast Food, Fast Women",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2008,
+        "budget" : 11840
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1369"),
+        "movie_name" : "Big Game",
+        "movie_genre" : "Action|Drama|Thriller",
+        "production_year" : 2010,
+        "budget" : 19300
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d136e"),
+        "movie_name" : "Decline of Western Civilization, The",
+        "movie_genre" : "Documentary|Musical",
+        "production_year" : 2013,
+        "budget" : 11969
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1370"),
+        "movie_name" : "Son's Room, The (Stanza del figlio, La)",
+        "movie_genre" : "Drama",
+        "production_year" : 2006,
+        "budget" : 13046
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1375"),
+        "movie_name" : "Fear Island",
+        "movie_genre" : "Horror|Mystery|Thriller",
+        "production_year" : 2012,
+        "budget" : 13253
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1377"),
+        "movie_name" : "Flower of Evil, The (Fleur du mal, La)",
+        "movie_genre" : "Drama",
+        "production_year" : 2008,
+        "budget" : 17247
+}
+Type "it" for more
+>
+>
+> db.movies.find({$or : [{"production_year" :{$gt:2005}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132b"),
+        "movie_name" : "The Arrival of Wang",
+        "movie_genre" : "Mystery|Sci-Fi|Thriller",
+        "production_year" : 2011,
+        "budget" : 16265
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132c"),
+        "movie_name" : "Hansel & Gretel",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 18891
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132d"),
+        "movie_name" : "Mysterious Geographic Explorations of Jasper Morello, The",
+        "movie_genre" : "Adventure|Animation",
+        "production_year" : 1994,
+        "budget" : 12671
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1330"),
+        "movie_name" : "Three Coins in the Fountain",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2012,
+        "budget" : 12329
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1332"),
+        "movie_name" : "Reap the Wild Wind",
+        "movie_genre" : "Action|Adventure|Drama",
+        "production_year" : 1994,
+        "budget" : 18896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1333"),
+        "movie_name" : "August",
+        "movie_genre" : "Drama",
+        "production_year" : 2000,
+        "budget" : 12685
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1334"),
+        "movie_name" : "Killer Crocodile",
+        "movie_genre" : "Horror",
+        "production_year" : 1992,
+        "budget" : 10612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1335"),
+        "movie_name" : "Insurgent",
+        "movie_genre" : "Action|Romance|Sci-Fi",
+        "production_year" : 1997,
+        "budget" : 13560
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1338"),
+        "movie_name" : "Song of the Little Road (Pather Panchali)",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 19083
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1339"),
+        "movie_name" : "House IV",
+        "movie_genre" : "Fantasy|Horror|Thriller",
+        "production_year" : 2010,
+        "budget" : 9149
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133a"),
+        "movie_name" : "Knight of Cups",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 13553
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133b"),
+        "movie_name" : "An Evening with Robin Williams",
+        "movie_genre" : "Comedy",
+        "production_year" : 1988,
+        "budget" : 12309
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "Fire of Conscience (For lung)",
+        "movie_genre" : "Action|Crime|Mystery|Thriller",
+        "production_year" : 1993,
+        "budget" : 12751
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133d"),
+        "movie_name" : "Sue",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133f"),
+        "movie_name" : "Mother's Day",
+        "movie_genre" : "Comedy|Horror",
+        "production_year" : 2010,
+        "budget" : 18844
+}
+Type "it" for more
+>
+>
+> db.movies.find({$nor : [{"production_year" :{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1337"),
+        "movie_name" : "Bond Girls Are Forever",
+        "movie_genre" : "Documentary",
+        "production_year" : 2000,
+        "budget" : 9676
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1372"),
+        "movie_name" : "Suburbia",
+        "movie_genre" : "Drama",
+        "production_year" : 1999,
+        "budget" : 9381
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1378"),
+        "movie_name" : "On His Own (a.k.a. My Apprenticeship) (V lyudyakh)",
+        "movie_genre" : "Drama",
+        "production_year" : 1993,
+        "budget" : 9238
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1384"),
+        "movie_name" : "Hot Fuzz",
+        "movie_genre" : "Action|Comedy|Crime|Mystery",
+        "production_year" : 1992,
+        "budget" : 9880
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13ac"),
+        "movie_name" : "Private Eyes, The",
+        "movie_genre" : "Comedy|Mystery",
+        "production_year" : 1992,
+        "budget" : 9669
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13cc"),
+        "movie_name" : "21 and Over",
+        "movie_genre" : "Comedy",
+        "production_year" : 1994,
+        "budget" : 9427
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13e0"),
+        "movie_name" : "Marvin Gaye: What's Going On",
+        "movie_genre" : "Documentary",
+        "production_year" : 1996,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d141e"),
+        "movie_name" : "Cop Land",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 9531
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1425"),
+        "movie_name" : "Fred: The Movie",
+        "movie_genre" : "Comedy",
+        "production_year" : 2000,
+        "budget" : 9173
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1443"),
+        "movie_name" : "Kathleen",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1994,
+        "budget" : 9446
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1448"),
+        "movie_name" : "Case of You, A",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1975,
+        "budget" : 9408
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d145f"),
+        "movie_name" : "Bungee Jumping of Their Own (Beonjijeompeureul hada)",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1976,
+        "budget" : 9794
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1469"),
+        "movie_name" : "The Rise",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 1998,
+        "budget" : 9452
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1474"),
+        "movie_name" : "The Hire: Ambush",
+        "movie_genre" : "Action",
+        "production_year" : 1998,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1476"),
+        "movie_name" : "Fear[s] of the Dark (Peur[s] du noir)",
+        "movie_genre" : "Animation|Horror",
+        "production_year" : 1993,
+        "budget" : 9896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14b6"),
+        "movie_name" : "Nobody Knows Anything!",
+        "movie_genre" : "Comedy",
+        "production_year" : 1999,
+        "budget" : 9612
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14d0"),
+        "movie_name" : "Big Fella",
+        "movie_genre" : "Drama|Musical",
+        "production_year" : 1997,
+        "budget" : 9102
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14db"),
+        "movie_name" : "O.C. and Stiggs",
+        "movie_genre" : "Comedy",
+        "production_year" : 1991,
+        "budget" : 9207
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14ef"),
+        "movie_name" : "Birds of America",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 9434
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1505"),
+        "movie_name" : "Somewhat Gentle Man, A (En ganske snill mann)",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 1992,
+        "budget" : 9505
+}
+Type "it" for more
+
+> db.movies.find({$and : [{"production_year" :{$gt:2000}},{"production_year" :{$lt:2010}}]}).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132e"),
+        "movie_name" : "Personal Journey with Martin Scorsese Through American Movies, A",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 17912
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d132f"),
+        "movie_name" : "Kino-Eye (Kinoglaz)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2001,
+        "budget" : 11231
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1331"),
+        "movie_name" : "Redemption: For Robbing the Dead",
+        "movie_genre" : "Western",
+        "production_year" : 2001,
+        "budget" : 17598
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1336"),
+        "movie_name" : "Filth",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "production_year" : 2008,
+        "budget" : 13245
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133d"),
+        "movie_name" : "Sue",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133e"),
+        "movie_name" : "Kill Switch",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 2002,
+        "budget" : 12979
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1342"),
+        "movie_name" : "Ultimate Gift, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 14973
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1348"),
+        "movie_name" : "Maverick",
+        "movie_genre" : "Adventure|Comedy|Western",
+        "production_year" : 2002,
+        "budget" : 17549
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1349"),
+        "movie_name" : "Blind Horizon",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2001,
+        "budget" : 11304
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d134b"),
+        "movie_name" : "The Oscar",
+        "movie_genre" : "Drama",
+        "production_year" : 2009,
+        "budget" : 11896
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1351"),
+        "movie_name" : "Be Kind Rewind",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 17234
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1352"),
+        "movie_name" : "Picnic at Hanging Rock",
+        "movie_genre" : "Drama|Mystery",
+        "production_year" : 2002,
+        "budget" : 13414
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1355"),
+        "movie_name" : "Catch Me If You Can",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2009,
+        "budget" : 17372
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1357"),
+        "movie_name" : "Selena",
+        "movie_genre" : "Drama|Musical",
+        "production_year" : 2007,
+        "budget" : 19866
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d135b"),
+        "movie_name" : "Halloween II",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2004,
+        "budget" : 9950
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d135c"),
+        "movie_name" : "Warning Shadows (Schatten - Eine nächtliche Halluzination)",
+        "movie_genre" : "Drama|Fantasy",
+        "production_year" : 2005,
+        "budget" : 19681
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d135f"),
+        "movie_name" : "Madame Bovary",
+        "movie_genre" : "Drama",
+        "production_year" : 2004,
+        "budget" : 11548
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1360"),
+        "movie_name" : "Tremors II: Aftershocks",
+        "movie_genre" : "Comedy|Horror|Sci-Fi",
+        "production_year" : 2006,
+        "budget" : 12264
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1362"),
+        "movie_name" : "Langoliers, The",
+        "movie_genre" : "Drama|Fantasy|Horror|Mystery|Sci-Fi|Thriller",
+        "production_year" : 2008,
+        "budget" : 9960
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1364"),
+        "movie_name" : "Like It Is",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 15214
+}
+
+
+> db.movies.find().sort({production_year: 1,movie_name:1}).skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d145f"),
+        "movie_name" : "Bungee Jumping of Their Own (Beonjijeompeureul hada)",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 1976,
+        "budget" : 9794
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14c6"),
+        "movie_name" : "Go",
+        "movie_genre" : "Drama",
+        "production_year" : 1979,
+        "budget" : 16448
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1381"),
+        "movie_name" : "One Flew Over the Cuckoo's Nest",
+        "movie_genre" : "Drama",
+        "production_year" : 1981,
+        "budget" : 16236
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14f0"),
+        "movie_name" : "Death of the Incredible Hulk, The",
+        "movie_genre" : "Action",
+        "production_year" : 1982,
+        "budget" : 13661
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1395"),
+        "movie_name" : "Beat the Devil",
+}
+
+> db.movies.find({},{"movie_genre":0}).sort({production_year: 1,movie_name:1}).pretty()
+{
+        "_id" : ObjectId("619e748b81a014239aa9594b"),
+        "movie_name" : "abcd",
+        "production_year" : 1082,
+        "budget" : 13661,
+        "__v" : 0
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d142e"),
+        "movie_name" : "Wrong Cops",
+        "production_year" : 1909,
+        "budget" : 17188
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14c1"),
+        "movie_name" : "Liquidator, The",
+        "production_year" : 1956,
+        "budget" : 17452
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1389"),
+        "movie_name" : "Frogs",
+        "production_year" : 1966,
+        "budget" : 12304
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d144e"),
+        "movie_name" : "King of Hearts",
+        "production_year" : 1967,
+        "budget" : 17908
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1356"),
+        "movie_name" : "Supermensch: The Legend of Shep Gordon",
+        "production_year" : 1967,
+        "budget" : 17393
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1409"),
+        "movie_name" : "U-571",
+        "production_year" : 1968,
+        "budget" : 14204
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14c9"),
+        "movie_name" : "Casanova Brown",
+        "production_year" : 1969,
+        "budget" : 16591
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1448"),
+        "movie_name" : "Case of You, A",
+        "production_year" : 1975,
+        "budget" : 9408
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1499"),
+        "movie_name" : "Little Miss Marker",
+        "production_year" : 1975,
+        "budget" : 14581
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1503"),
+        "movie_name" : "Summer Stock",
+        "production_year" : 1975,
+        "budget" : 15966
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d145f"),
+        "movie_name" : "Bungee Jumping of Their Own (Beonjijeompeureul hada)",
+        "production_year" : 1976,
+        "budget" : 9794
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14c6"),
+        "movie_name" : "Go",
+        "production_year" : 1979,
+        "budget" : 16448
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1381"),
+        "movie_name" : "One Flew Over the Cuckoo's Nest",
+        "production_year" : 1981,
+        "budget" : 16236
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14f0"),
+        "movie_name" : "Death of the Incredible Hulk, The",
+        "production_year" : 1982,
+        "budget" : 13661
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d1395"),
+        "movie_name" : "Beat the Devil",
+        "production_year" : 1983,
+        "budget" : 15197
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14cb"),
+        "movie_name" : "Black Ice (Musta jää)",
+        "production_year" : 1983,
+        "budget" : 15621
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d13f9"),
+        "movie_name" : "Get Smart",
+        "production_year" : 1984,
+        "budget" : 12917
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d14f2"),
+        "movie_name" : "If I Want to Whistle, I Whistle (Eu cand vreau sa fluier, fluier)",
+        "production_year" : 1984,
+        "budget" : 12266
+}
+{
+        "_id" : ObjectId("619cef5a8af13ad59b9d133c"),
+        "movie_name" : "S",
+        "production_year" : 1984,
+        "budget" : 34534
+}
