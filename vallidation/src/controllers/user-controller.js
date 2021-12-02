@@ -9,7 +9,7 @@ body("last_name").isLength({min:1,max:20}).withMessage("last_name is required an
 body("email").custom(async(value)=>{
     const isEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/.test(value);
     const list=["gmail.com","yahoo.com"];
-    const a=email.split("@")
+    const a=value.split("@")
     if(!list.includes(a[1])){
         throw new Error("we do not accept email of this domain");
     }
@@ -27,7 +27,7 @@ body("email").custom(async(value)=>{
 body("pincode").isLength({min:6 , max:6}).custom(value=>{
     const isNumber=/^[0-9]*$/.test(value);
     if(!isNumber){
-        throw new Error("Age cannot be below 0 and above 100")
+        throw new Error("Pincode should be a number and of 6 length")
     }
     return true;
 }),
