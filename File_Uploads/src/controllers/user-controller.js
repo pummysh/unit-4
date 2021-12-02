@@ -9,7 +9,7 @@ router.post("/:type",upload.single("images"), async (req, res) => {
       let users=await user.create({
            first_name: req.body.first_name,
            last_name: req.body.last_name,
-           profile_pic: req.file.path,
+           images: req.file.path,
        });
        return res.status(201).json({users});
 
@@ -28,8 +28,8 @@ router.patch("/:type/:id",upload.single("images"),async(req,res)=>{
         
         if(req.file.path){
             const d= await user.findById(req.params.id);
-            const users= await user.findByIdAndUpdate(req.params.id,{$set:{profile_pic:req.file.path}});
-            fs.unlinkSync(d.profile_pic);
+            const users= await user.findByIdAndUpdate(req.params.id,{$set:{images:req.file.path}});
+            fs.unlinkSync(d.images);
         }
         if(req.body.first_name){
             const users= await user.findByIdAndUpdate(req.params.id,{$set:{first_name:req.body.first_name}});
@@ -48,7 +48,7 @@ router.patch("/:type/:id",upload.single("images"),async(req,res)=>{
 router.delete("/delete/:type/:id",upload.any("images"),async (req, res)=>{
     console.log(req.params.id);
     const d= await user.findById(req.params.id);
-    fs.unlinkSync(d.profile_pic);
+    fs.unlinkSync(d.images);
     console.log(d);
     const users =await user.findByIdAndDelete(req.params.id,{new:true});
     
